@@ -1,6 +1,11 @@
 package za.ac.cput.gui.main;
-
-import za.ac.cput.gui.address.ItemMenuGui;
+/*
+* ADP362S
+* Group 19 - Bank application
+* Capstone project
+* */
+import za.ac.cput.gui.bank.BankItemMenuGui;
+import za.ac.cput.gui.address.AddressMenuGui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,7 +39,6 @@ public class HomeGUI implements ActionListener {
         panelCenter.setBackground(backgroundColor);
 
         //Fillers
-
         Filler1 = new JLabel("======");
         Filler2 = new JLabel("======");
         Filler3 = new JLabel("======");
@@ -110,9 +114,25 @@ public class HomeGUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getActionCommand().equals("1. Bank")){
+            BankItemMenuGui bankItemMenuGui = new BankItemMenuGui();
+            bankItemMenuGui.setGUI();
+        }
+        if(e.getActionCommand().equals("2. Account")){
+            //TODO: Add page here
+        }
+        if(e.getActionCommand().equals("3. Customer")){
+            //TODO: Add page here
+        }
+        if(e.getActionCommand().equals("4. Contact")){
+            //TODO: Add page here
+        }
         if(e.getActionCommand().equals("5. Address")){
-            ItemMenuGui itemMenuGui = new ItemMenuGui();
+            AddressMenuGui itemMenuGui = new AddressMenuGui();
             itemMenuGui.setGUI();
+        }
+        if(e.getActionCommand().equals("6. Statement")){
+            //TODO: Add page here
         }
     }
 }
