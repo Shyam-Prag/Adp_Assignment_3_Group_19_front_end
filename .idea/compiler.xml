@@ -9,5 +9,6 @@
         <module name="Adp_Assignment_3_Group_19_front_end" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
   </component>
 </project>

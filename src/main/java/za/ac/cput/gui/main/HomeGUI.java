@@ -2,6 +2,8 @@ package za.ac.cput.gui.main;
 
 import za.ac.cput.gui.account.AccountMenuGUI;
 import za.ac.cput.gui.address.AddressMenuGui;
+import za.ac.cput.gui.contact.MenuContact;
+import za.ac.cput.gui.customer.ItemMenuGUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +14,7 @@ public class HomeGUI extends JFrame implements ActionListener {
     private JFrame mainframe;
     private JPanel panelNorth, panelSouth, panelEast, panelWest, panelCenter;
     private JLabel lblHeading;
-    private JButton btnBank, btnAccount, btnCustomer,  btnContact,btnAddress, btnStatement;
+    private JButton btnBank, btnAccount, btnCustomer, btnContact, btnAddress, btnStatement;
     private JLabel Filler1, Filler2, Filler3, Filler4;
     Color backgroundColor = Color.DARK_GRAY;
     Color btnColor = Color.WHITE;
@@ -104,25 +106,25 @@ public class HomeGUI extends JFrame implements ActionListener {
 
         // Set UI:
         mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainframe.setSize(400,400);
+        mainframe.setSize(400, 400);
         mainframe.setLocationRelativeTo(null);
         mainframe.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getActionCommand().equals("5. Address")){
+        if (e.getActionCommand().equals("5. Address")) {
             AddressMenuGui addressMenuGui = new AddressMenuGui();
             addressMenuGui.setGUI();
-        }
-        else if(e.getActionCommand().equals("2. Account")){
+        } else if (e.getActionCommand().equals("2. Account")) {
             AccountMenuGUI.main(null);
             this.setVisible(false);
-        }
-
-        if(e.getActionCommand().equals("3. Customer")){
-            ItemMenuGUI itemMenuGUI=new ItemMenuGUI();
+        } else if (e.getActionCommand().equals("3. Customer")) {
+            ItemMenuGUI itemMenuGUI = new ItemMenuGUI();
             itemMenuGUI.setGUI();
+        } else if (e.getActionCommand().equals("4. Contact")) {
+            MenuContact menuContact = new MenuContact();
+            menuContact.setGUI();
         }
     }
 }
