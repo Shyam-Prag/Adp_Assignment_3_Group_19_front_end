@@ -1,4 +1,9 @@
 package za.ac.cput.gui.account;
+/**
+ * CreateAccount.java
+ * Author: Siphelele Nyathi 218334028
+ * Due Date: 20/10/2021
+ */
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,13 +12,12 @@ import java.awt.event.ActionListener;
 
 public class CreateAccount extends JFrame implements ActionListener {
 
-
     private JLabel lblBalance, lblRate, lblPeriod;
     private JTextField txtBalance, txtRate, txtPeriod;
     private JButton btnSave, btnCancel;
     public JPanel northPanel, southPanel;
 
-    public CreateAccount(){
+    public CreateAccount() {
         super("Add new Account");
 
         northPanel = new JPanel();
@@ -21,21 +25,21 @@ public class CreateAccount extends JFrame implements ActionListener {
 
         lblBalance = new JLabel("Balance: ");
         lblRate = new JLabel("Interest Rate %: ");
-        lblPeriod = new JLabel("Interest period: ");
-
+        lblPeriod = new JLabel("Interest Period (months): ");
 
         txtBalance = new JTextField(30);
         txtRate = new JTextField(30);
         txtPeriod = new JTextField(30);
 
-
-        btnSave = new JButton("Save");
-        btnCancel = new JButton("Cancel");
+        btnSave = new JButton("SAVE");
+        btnCancel = new JButton("CANCEL");
     }
 
     public void setGUI() {
-        northPanel.setLayout(new GridLayout(0,2));
-        southPanel.setLayout(new GridLayout(1,2));
+
+        northPanel.setLayout(new GridLayout(0, 2));
+        southPanel.setLayout(new GridLayout(1, 2));
+        this.setPreferredSize(new Dimension(350, 130));
 
         northPanel.add(lblBalance);
         northPanel.add(txtBalance);
@@ -44,16 +48,14 @@ public class CreateAccount extends JFrame implements ActionListener {
         northPanel.add(lblPeriod);
         northPanel.add(txtPeriod);
 
-
         southPanel.add(btnSave);
         southPanel.add(btnCancel);
-
-        this.add(northPanel, BorderLayout.NORTH);
-        this.add(southPanel, BorderLayout.SOUTH);
 
         btnSave.addActionListener(this);
         btnCancel.addActionListener(this);
 
+        this.add(northPanel, BorderLayout.NORTH);
+        this.add(southPanel, BorderLayout.SOUTH);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
@@ -64,11 +66,11 @@ public class CreateAccount extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnSave) {
             //store(txtBalance.getText(),
-                //    txtRate.getText(),
-                  //  txtPeriod.getText());
+            //    txtRate.getText(),
+            //  txtPeriod.getText());
 
         } else if (e.getSource() == btnCancel) {
-           AccountMenuGUI.main(null);
+            AccountMenuGUI.main(null);
             this.setVisible(false);
         }
     }
