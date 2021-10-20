@@ -3,6 +3,7 @@ package za.ac.cput.gui.main;
 import za.ac.cput.gui.account.AccountMenuGUI;
 import za.ac.cput.gui.address.AddressMenuGui;
 import za.ac.cput.gui.statement.StatementMenuGui;
+import za.ac.cput.gui.customer.ItemMenuGUI;
 
 import javax.swing.*;
 import java.awt.*;

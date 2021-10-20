@@ -5,48 +5,46 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CreateCustomer implements ActionListener {
+public class CreateCustomer extends JFrame implements ActionListener {
     JFrame jFrame;
     JPanel panelNorth, panelCenter, panelSouth, panelEast, panelWest;
-    JLabel heading,labelFirstName,labelLastName, labelPadding1, labelPadding2;
-    JButton save,exit,clear;
+    JLabel heading, labelFirstName, labelLastName, labelPadding1, labelPadding2;
+    JButton save, exit, clear;
     JTextField firstName, lastName;
     Font headingFont, bodyFont;
     Color color = Color.WHITE;
-    Color bg_color=Color.DARK_GRAY;
+    Color bg_color = Color.DARK_GRAY;
 
-    public CreateCustomer()
-    {
-        jFrame = new JFrame("Customer Menu");
+    public CreateCustomer() {
+        jFrame = new JFrame("Add customer");
         headingFont = new Font("Times new roman", Font.BOLD, 30);
-        bodyFont=new Font("Times new roman", Font.PLAIN,20);
-        panelNorth=new JPanel();
-        panelCenter=new JPanel();
-        panelSouth=new JPanel();
-        panelWest=new JPanel();
-        panelEast=new JPanel();
+        bodyFont = new Font("Times new roman", Font.PLAIN, 20);
+        panelNorth = new JPanel();
+        panelCenter = new JPanel();
+        panelSouth = new JPanel();
+        panelWest = new JPanel();
+        panelEast = new JPanel();
 
-        heading=new JLabel("ADD CUSTOMER");
+        heading = new JLabel("ADD CUSTOMER");
 
-        labelFirstName=new JLabel("First names: ");
-        labelLastName=new JLabel("Last names: ");
+        labelFirstName = new JLabel("First names: ");
+        labelLastName = new JLabel("Last names: ");
 
-        labelPadding1=new JLabel();
-        labelPadding2=new JLabel();
+        labelPadding1 = new JLabel();
+        labelPadding2 = new JLabel();
 
-        firstName=new JTextField();
-        lastName=new JTextField();
+        firstName = new JTextField();
+        lastName = new JTextField();
 
-        save=new JButton("Save");
-        exit=new JButton("Exit");
-        clear=new JButton("Clear");
+        save = new JButton("Save");
+        exit = new JButton("Exit");
+        clear = new JButton("Clear");
     }
 
-    public void setGUI()
-    {
+    public void setGUI() {
         panelNorth.setLayout(new FlowLayout());
-        panelCenter.setLayout(new GridLayout(2,2));
-        panelSouth.setLayout(new GridLayout(1,3));
+        panelCenter.setLayout(new GridLayout(2, 2));
+        panelSouth.setLayout(new GridLayout(1, 3));
 
         panelNorth.setBackground(bg_color);
         panelEast.setBackground(bg_color);
@@ -63,7 +61,7 @@ public class CreateCustomer implements ActionListener {
         labelFirstName.setHorizontalAlignment(JLabel.CENTER);
         labelFirstName.setForeground(color);
         panelCenter.add(firstName);
-        firstName.setSize(1,1);
+        firstName.setSize(1, 1);
 
         panelCenter.add(labelLastName);
         labelLastName.setFont(bodyFont);
@@ -78,8 +76,8 @@ public class CreateCustomer implements ActionListener {
         exit.setBackground(color);
         clear.setBackground(color);
 
-        jFrame.add(panelNorth,BorderLayout.NORTH);
-        jFrame.add(panelCenter,BorderLayout.CENTER);
+        jFrame.add(panelNorth, BorderLayout.NORTH);
+        jFrame.add(panelCenter, BorderLayout.CENTER);
         jFrame.add(panelSouth, BorderLayout.SOUTH);
         jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -94,8 +92,7 @@ public class CreateCustomer implements ActionListener {
         jFrame.setVisible(true);
     }
 
-    public void clear()
-    {
+    public void clear() {
         firstName.setText("");
         lastName.setText("");
         firstName.requestFocus();
@@ -103,19 +100,12 @@ public class CreateCustomer implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getActionCommand().equals("Exit"))
-        {
+        if (e.getActionCommand().equals("Exit")) {
             jFrame.dispose();
         }
-        if(e.getActionCommand().equals("Clear"))
-        {
+        if (e.getActionCommand().equals("Clear")) {
             clear();
         }
 
     }
-
-    /*public static void main(String[] args) {
-        new CreateCustomer().setGUI();
-    }
-     */
 }
