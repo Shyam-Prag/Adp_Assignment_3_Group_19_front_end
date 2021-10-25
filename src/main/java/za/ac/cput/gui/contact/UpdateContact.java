@@ -126,13 +126,14 @@ public class UpdateContact implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("Update")){
             Contact contact = new Contact();
-            contact.setId ("AN157d");
+            contact.setId (txtId.getText());
             contact.setMobile(txtMobile.getText());
             contact.setName(txtName.getText());
             contact.setEmail(txtEmail.getText());
 
             ContactClient client = new ContactClient();
             client.updateContact(contact);
+            MenuFrame.dispose();
 
         }
     }

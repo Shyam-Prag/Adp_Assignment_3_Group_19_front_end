@@ -128,6 +128,7 @@ public class DeleteContact implements ActionListener {
 
             ContactClient client = new ContactClient();
             client.deleteContact(txtId.getText());
+            MenuFrame.dispose();
 
         }
     }

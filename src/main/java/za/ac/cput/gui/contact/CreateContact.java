@@ -134,6 +134,7 @@ public class CreateContact implements ActionListener {
 
             ContactClient client = new ContactClient();
             client.createContact(contact);
+            MenuFrame.dispose();
         }
     }
 }

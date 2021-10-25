@@ -7,23 +7,23 @@ public class ContactClient {
     private RestClient client = new RestClient();
 
     public Contact createContact(Contact contact) {
-        return client.post("http://localhost:8080/contact/create", contact, Contact.class);
+        return client.post("http://localhost:8080/Contact/create", contact, Contact.class);
     }
 
     public Contact readContact(String id) {
-        return client.get("http://localhost:8080/contact/read/" + id, Contact.class);
+        return client.get("http://localhost:8080/Contact/read/" + id, Contact.class);
     }
 
     public Contact updateContact(Contact contact) {
-        return client.post("http://localhost:8080/contact/update", contact, Contact.class);
+        return client.post("http://localhost:8080/Contact/update", contact, Contact.class);
     }
 
     public Boolean deleteContact(String id) {
-        return client.get("http://localhost:8080/contact/delete/" + id, Boolean.class);
+        return client.get("http://localhost:8080/Contact/delete/" + id, Boolean.class);
     }
 
     public Set<Contact> getAllContacts() {
-        return client.get("http://localhost:8080/contact/getall", new HashSet<Contact>().getClass());
+        return client.get("http://localhost:8080/Contact/getall", new HashSet<Contact>().getClass());
     }
 }
 

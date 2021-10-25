@@ -127,7 +127,7 @@ public class ViewContact implements ActionListener {
 
             ContactClient client = new ContactClient();
             client.deleteContact(txtId.getText());
-
+            MenuFrame.dispose();
         }
     }
 
